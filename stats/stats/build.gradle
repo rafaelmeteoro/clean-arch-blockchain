@@ -1,8 +1,7 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.dynamic-feature'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 apply from: "dependencies.gradle"
@@ -12,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.meteoro.cleanarchblockchain"
+        applicationId "com.meteoro.cleanarchblockchain.stats"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -21,23 +20,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    applicationVariants.all { variant ->
-        variant.getCompileConfiguration().exclude module: 'testutils'
-        variant.getRuntimeConfiguration().exclude module: 'testutils'
-    }
-
     buildFeatures {
         viewBinding true
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-            buildConfigField "String", "BASE_URL", "\"https://api.blockchain.info/\""
-        }
         release {
             minifyEnabled false
-            buildConfigField "String", "BASE_URL", "\"https://api.blockchain.info/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -59,14 +48,4 @@ android {
         main.java.srcDirs += 'src/main/kotlin/'
         test.java.srcDirs += 'src/test/kotlin/'
     }
-
-    testOptions {
-        unitTests {
-            all {
-                useJUnitPlatform()
-            }
-        }
-    }
-
-    dynamicFeatures = [':stats:stats']
 }

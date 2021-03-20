@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/nav_stats"
+    app:startDestination="@id/fragment_stats">
+
+    <fragment
+        android:id="@+id/fragment_stats"
+        android:name="com.meteoro.cleanarchblockchain.stats.ui.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+
+</navigation>
