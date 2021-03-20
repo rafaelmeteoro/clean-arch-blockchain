@@ -9,5 +9,10 @@
         app:graphPackage="${applicationId}.stats"
         app:graphResName="nav_stats"
         app:moduleName="stats" />
+    <include-dynamic
+        android:id="@+id/nav_charts"
+        app:graphPackage="${applicationId}.charts"
+        app:graphResName="nav_charts"
+        app:moduleName="charts" />
 
 </navigation>

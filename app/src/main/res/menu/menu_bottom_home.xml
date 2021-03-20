@@ -5,4 +5,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_stats_24"
         android:title="@string/title_stats" />
+    <item
+        android:id="@+id/nav_charts"
+        android:enabled="true"
+        android:icon="@drawable/ic_chart_24"
+        android:title="@string/title_charts" />
 </menu>
