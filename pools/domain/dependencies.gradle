@@ -1,13 +1,9 @@
-apply from: "../../libraries.gradle"
-
 dependencies {
-    implementation project(":app")
-    implementation project(":pools:domain")
-
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
-    kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
 
-    testImplementation "androidx.arch.core:core-testing:$versions.coreTesting"
     testImplementation "junit:junit:$versions.junit"
     testImplementation "io.mockk:mockk:$versions.mockk"
     testImplementation "com.google.truth:truth:$versions.truth"
