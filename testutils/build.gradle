@@ -1,0 +1,7 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+apply from: "../kotlinlibrary.gradle"
+apply from: "dependencies.gradle"

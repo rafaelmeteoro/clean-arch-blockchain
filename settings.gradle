@@ -1,2 +1,3 @@
+include ':testutils'
 include ':app'
 rootProject.name = "CleanArchBlockchain"
