@@ -1,19 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/secondary_light_color"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stats"
-        android:textAllCaps="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/primary_dark_color"
+        android:minHeight="?attr/actionBarSize">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/BaseText.Toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/app_name" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/cl_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_block_summary_title"
+                    style="@style/BaseText.Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_medium"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
+                    android:text="@string/stats_block_summary_title" />
+
+                <include
+                    android:id="@+id/view_block_summary"
+                    layout="@layout/view_card_block_summary" />
+
+                <TextView
+                    android:id="@+id/tv_market_summarty_title"
+                    style="@style/BaseText.Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_medium"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
+                    android:text="@string/stats_market_summary_title" />
+
+                <include
+                    android:id="@+id/view_market_summary"
+                    layout="@layout/view_card_market_summary" />
+
+                <TextView
+                    android:id="@+id/tv_transaction_summary_title"
+                    style="@style/BaseText.Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_medium"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
+                    android:text="@string/stats_transaction_summary_title" />
+
+                <include
+                    android:id="@+id/view_transaction_summary"
+                    layout="@layout/view_card_transaction_summary" />
+
+                <TextView
+                    android:id="@+id/tv_mining_cost_summary_title"
+                    style="@style/BaseText.Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_medium"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
+                    android:text="@string/stats_mining_cost_summary_title" />
+
+                <include
+                    android:id="@+id/view_mining_cost_summary"
+                    layout="@layout/view_card_mining_cost_summary" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
