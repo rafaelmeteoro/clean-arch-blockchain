@@ -2,4 +2,5 @@ include ':testutils'
 include ':app'
 include ':stats:stats'
 include ':stats:domain'
+include ':stats:data'
 rootProject.name = "CleanArchBlockchain"
