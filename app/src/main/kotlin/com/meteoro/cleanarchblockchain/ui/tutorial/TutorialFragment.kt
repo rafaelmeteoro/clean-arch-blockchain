@@ -1,5 +1,8 @@
 package com.meteoro.cleanarchblockchain.ui.tutorial
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.meteoro.cleanarchblockchain.databinding.FragmentTutorialBinding
+import com.meteoro.cleanarchblockchain.ui.home.HomeActivity
 import com.meteoro.cleanarchblockchain.utils.debounceClick
 import com.meteoro.cleanarchblockchain.utils.setStatusBarColor
 import dagger.hilt.android.AndroidEntryPoint
@@ -57,6 +61,9 @@ class TutorialFragment : Fragment() {
     }
 
     private fun onNavigation() {
-
+        startActivity(Intent(requireContext(), HomeActivity::class.java).also {
+            it.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK
+        })
+        requireActivity().overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.fade_out)
     }
 }
