@@ -5,4 +5,5 @@ include ':stats:domain'
 include ':stats:data'
 include ':charts:charts'
 include ':charts:domain'
+include ':charts:data'
 rootProject.name = "CleanArchBlockchain"
