@@ -14,5 +14,10 @@
         app:graphPackage="${applicationId}.charts"
         app:graphResName="nav_charts"
         app:moduleName="charts" />
+    <include-dynamic
+        android:id="@+id/nav_pools"
+        app:graphPackage="${applicationId}.pools"
+        app:graphResName="nav_pools"
+        app:moduleName="pools" />
 
 </navigation>

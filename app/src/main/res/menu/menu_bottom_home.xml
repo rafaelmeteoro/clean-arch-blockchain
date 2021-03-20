@@ -10,4 +10,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_chart_24"
         android:title="@string/title_charts" />
+    <item
+        android:id="@+id/nav_pools"
+        android:enabled="true"
+        android:icon="@drawable/ic_pools_24"
+        android:title="@string/title_pools" />
 </menu>
